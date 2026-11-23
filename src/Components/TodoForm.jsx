@@ -1,5 +1,10 @@
 function TodoForm() {
+<<<<<<< Updated upstream
     
+=======
+  const [todo, setTodo] = useState("");
+  const { addTodo } = useTodo();
+>>>>>>> Stashed changes
 
     return (
         <form  className="flex">
