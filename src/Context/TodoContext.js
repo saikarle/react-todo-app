@@ -14,7 +14,7 @@ export const TodoContext=createContext({
     toggoleTodo:(id)=>{},
 })
 
-export const usetodo=()=>{
+export const useTodo=()=>{
     return useContext(TodoContext)
 }
 

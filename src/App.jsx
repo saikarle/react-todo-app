@@ -4,13 +4,8 @@ import { useState } from 'react'
 import './App.css'
 import { Todoprovider } from './Context/TodoContext';
 import { useEffect } from 'react';
-<<<<<<< Updated upstream
 import TodoForm from './Components/TodoForm';
 import TodoItem from './Components/TodoItem';
-=======
-import TodoItem from './Components/TodoItem';
-import TodoForm from './Components/TodoForm'
->>>>>>> Stashed changes
 
 function App() {
 
@@ -59,7 +54,6 @@ useEffect(() => {
                     </div>
                     <div className="flex flex-wrap gap-y-3">
                         {/*Loop and Add TodoItem here */}
-<<<<<<< Updated upstream
                         {todos.map((todo)=>(
                           <div key={todo.id}>
                             
@@ -68,14 +62,12 @@ useEffect(() => {
                           </div>
                         ))}
                         
-=======
                          {todos.map((todo) => (
               <div key={todo.id} className="w-full">
                 <TodoItem todo={todo} />
               </div>
             ))}
 
->>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
