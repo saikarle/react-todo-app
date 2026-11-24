@@ -6,25 +6,27 @@ function TodoForm() {
   const [todo, setTodo] = useState("");
   const { addTodo } = useTodo();
 
-  const add = (e) => {
-    e.preventDefault();
+const add = (e) => {
+  e.preventDefault();
+  console.log("1. Form submit hua! Input text hai:", todo);
 
-    if (!todo.trim()) return;
+  // .trim() se sirf spaces waala empty todo nahi banega
+  if (!todo) return;
 
-    addTodo({
-      todo: todo,
-      completed: false,
-    });
+  addTodo({
+    todo,
+    completed: false,
+  });
 
-    setTodo("");
-  };
+  setTodo("");
+};
 
-  return (
+return (
     <form className="flex" onSubmit={add}>
       <input
         type="text"
         value={todo}
-        onChange={(e) => setTodo(e.target.value)}
+        onChange={(e) => setTodo(   e.target.value)}
         placeholder="Write Todo..."
         className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
       />
