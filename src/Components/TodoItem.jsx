@@ -9,15 +9,15 @@ function TodoItem({ todo }) {
     const [todoMsg, setTodoMsg] = useState(todo.todo);
     
     // Check whether your context has updateTodo or updatedTodo:
-    const { updateTodo, deleteTodo , toggleCompletes } = useTodo();
+    const { updatedTodo, deleteTodo , toggleCompletes } = useTodo();
 
     // 3. Fixed: editTodo (small 'e')
     const editTodo = () => {
-        const updateFn = updateTodo || updatedTodo;
+        const updateFn =   updatedTodo;
         if (updateFn) {
-            updateFn(todo.id, { ...todo, todo: todoMsg });
-        }
+            updateFn({ ...todo, todo: todoMsg }, todo.id);        }
         setIsTodoEditable(false);
+        console.log(isTodoEditable)
     };
 
 
@@ -63,6 +63,7 @@ function TodoItem({ todo }) {
                 disabled={todo.completed}
             >
                 {isTodoEditable ? "📁" : "✏️"}
+
             </button>
             {/* Delete Todo Button */}
             <button
